@@ -6,13 +6,17 @@ alert("First enter a low number, then a high number. Then, guess a random betwee
 //uses parseInt() to make sure we have numbers not strings
 var from = parseInt(prompt("Enter the lower bound."));
 while(from < 0 || from > 1000){
-   from = parseInt(prompt("Enter a number greater than 0"));
+   from = parseInt(prompt("Enter a number greater than 0 and less than a 1000."));
 }
 while (isNaN(from)){
    from = parseInt(prompt("You must enter a number."));
 }
 // must enter a number not letter     
 var to = parseInt(prompt("Enter the higher bound."));   
+// Make to less than 1000    
+while(to < 0 || to > 1000){
+   to = parseInt(prompt("Enter a number greater than 0 and less than a 1000."));
+}
 while (isNaN(to)){
   to = parseInt(prompt("You must enter a number."));
 } 
@@ -34,16 +38,17 @@ while (isNaN(currentGuess)){
 }
 // loop until user guesses correct number
 while(currentGuess != target){
-     if (currentGuess < target){
-    currentGuess = parseInt(prompt("Enter a higher number"));
+    
+     if (currentGuess < from || currentGuess > to){
+    currentGuess = parseInt(prompt("You can only guess between your lower and higher bound."));
     
     totalGuesses++;
 }else if (currentGuess > target){
     currentGuess = parseInt(prompt("Enter a lower number"));
     
     totalGuesses++; 
-}else if (currentGuess < from || currentGuess > to){
-    currentGuess = parseInt(prompt("You can only guess between your lower and higher bound."))
+}else if (currentGuess < target){
+    currentGuess = parseInt(prompt("Enter a higher number"));
 }
 }
 
