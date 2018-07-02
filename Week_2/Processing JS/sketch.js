@@ -30,14 +30,14 @@ function draw() {
         circle.color = [random(0,255),random(0,255),random(0,255)];//make the circle blue
         circle.xSpeed = -circle.xSpeed;  
     }
-    if (circle.yCoor >=480){
+    if (circle.yCoor >=480){ //this is for the top and bottom of the canvas, I change the size of the circle and color if it hit the edge of the top or bottom
         circle.diameter = random(10,110);
         circle.color = [random(0,255),random(0,255),random(0,255)];
         circle.ySpeed = -circle.ySpeed;
      }else if (circle.yCoor <0){
         circle.diameter = (random(10,110));
-         circle.color = [random(0,255),random(0,255),random(0,255)];
-         circle.ySpeed = -circle.ySpeed;  
+        circle.color = [random(0,255),random(0,255),random(0,255)];
+        circle.ySpeed = -circle.ySpeed;  
      }
     circle.xCoor += circle.xSpeed;
     circle.yCoor += circle.ySpeed;
