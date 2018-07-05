@@ -28,12 +28,12 @@ function Circle(x, y, size, color, xSpeed, ySpeed){
 var circle = new Circle(0,20, 80, [255,0,0], 8, 15);
 var circle2 = new Circle(0,30,50,[0,0,0],15,20);
 var circleList = [];
-var balls = random([2,5,10,16]);
 
-//inout the canvas width and height.
+//input the canvas width and height.
 function setup () {
     createCanvas(parseInt(prompt("Input the Canvas Width.")), parseInt(prompt("Input the Canvas Height.")));
     background(backgroundTrail);
+    var balls = random([2,5,10,16]);
     for(var i = 0; i < balls; i++){//this spawns the different numbers of ball when you refresh the page.
         circleList.push(new Circle(random(0, width), random(0, height), random(0, 100), random(0, 255), random(0, 20), random(0, 20)));
     }
